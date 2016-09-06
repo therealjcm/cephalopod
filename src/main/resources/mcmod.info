@@ -1,15 +1,15 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
+  "modid": "cephalopod",
+  "name": "Cephalopod Conspiracy",
+  "description": "Those squid are up to something",
+  "version": "1.0.0",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/therealjcm/cephalopod",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
-  "logoFile": "",
+  "authorList": ["TheRealJCM"],
+  "credits": "Cthulhu, for not waking up and destroying the world. Yet.",
+  "logoFile": "cephalopod_logo.jpg",
   "screenshots": [],
   "dependencies": []
 }
