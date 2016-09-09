@@ -1,6 +1,5 @@
 package strangeways.cephalopod;
 
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -8,11 +7,12 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import strangeways.cephalopod.item.ItemMgr;
 import strangeways.cephalopod.proxy.CommonProxy;
 import strangeways.cephalopod.tab.CreativeTabTutorial;
 
-@Mod(modid = TutorialMod.MODID, version = TutorialMod.VERSION, name = TutorialMod.NAME)
-public class TutorialMod
+@Mod(modid = MainMod.MODID, version = MainMod.VERSION, name = MainMod.NAME)
+public class MainMod
 {
     public static final String MODID = "cephalopod";
     public static final String VERSION = "1.0.0";
@@ -23,7 +23,7 @@ public class TutorialMod
     public static CommonProxy proxy;
 
     @Mod.Instance
-    public static TutorialMod instance;
+    public static MainMod instance;
 
     public static CreativeTabTutorial tabTutorial;
 
@@ -31,6 +31,7 @@ public class TutorialMod
     public void preInit(FMLPreInitializationEvent event)
     {
         tabTutorial = new CreativeTabTutorial(CreativeTabs.getNextID(), "tab_tutorial");
+        ItemMgr.preInit();
         proxy.preInit(event);
     }
 
@@ -45,4 +46,5 @@ public class TutorialMod
     {
         proxy.postInit(event);
     }
+
 }

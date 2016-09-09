@@ -2,3 +2,8 @@
 
 # creative tab
 itemGroup.tab_tutorial=Tutorial Mod
+
+# items
+item.tutorial_item.name=Thing which your aunt gave you that you don't know what it is
+item.sword_of_tides.name=The Sword of the Tides
+item.something1=The thing with the thing
