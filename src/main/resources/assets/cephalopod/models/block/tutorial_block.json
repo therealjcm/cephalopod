@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "cephalopod:blocks/tutorial_block"
+  }
+}

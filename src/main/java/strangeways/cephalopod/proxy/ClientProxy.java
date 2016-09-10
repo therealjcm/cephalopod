@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import strangeways.cephalopod.MainMod;
+import strangeways.cephalopod.block.BlockMgr;
 import strangeways.cephalopod.item.ItemMgr;
 
 /**
@@ -24,6 +25,7 @@ public class ClientProxy extends CommonProxy {
     public void init(FMLInitializationEvent event)
     {
         ItemMgr.registerJsonModels();
+        BlockMgr.registerRenders();
     }
 
     @Override

@@ -25,7 +25,6 @@ public class ModItem extends Item {
     public ModItem(String name)
     {
         setUnlocalizedName(name);
-        setUnlocalizedName(name);
         setCreativeTab(MainMod.tabTutorial);
     }
 

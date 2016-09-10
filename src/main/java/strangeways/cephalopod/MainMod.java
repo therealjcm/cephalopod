@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import strangeways.cephalopod.block.BlockMgr;
 import strangeways.cephalopod.item.ItemMgr;
 import strangeways.cephalopod.proxy.CommonProxy;
 import strangeways.cephalopod.tab.CreativeTabTutorial;
@@ -32,6 +33,7 @@ public class MainMod
     {
         tabTutorial = new CreativeTabTutorial(CreativeTabs.getNextID(), "tab_tutorial");
         ItemMgr.preInit();
+        BlockMgr.preInit();
         proxy.preInit(event);
     }
 
