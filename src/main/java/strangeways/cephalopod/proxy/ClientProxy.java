@@ -14,8 +14,8 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event)
     {
-        // OBJLoader.INSTANCE.addDomain(MainMod.MODID);
-        // ItemMgr.registerModels();
+        OBJLoader.INSTANCE.addDomain(MainMod.MODID);
+        ItemMgr.registerObjModels();
     }
 
 
@@ -23,7 +23,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void init(FMLInitializationEvent event)
     {
-        ItemMgr.registerRenders();
+        ItemMgr.registerJsonModels();
     }
 
     @Override

@@ -17,44 +17,55 @@ import java.util.Map;
  * Static methods and data structures to initialize and register the Item instances in the mod
  */
 public class ItemMgr {
-    private static Map<String, Item> modItems;
+    private static Map<String, Item> jsonModItems;
+    private static Map<String, Item> objModItems;
 
     public static void preInit()
     {
-        modItems = new HashMap<>();
-        modItems.put("tutorial_item", new ModItem("tutorial_item"));
-        modItems.put("sword_of_tides", new ModWeaponItem(Item.ToolMaterial.IRON, "sword_of_tides"));
+        jsonModItems = new HashMap<>();
+        objModItems = new HashMap<>();
+
+        jsonModItems.put("tutorial_item", new ModItem("tutorial_item"));
+        jsonModItems.put("sword_of_tides", new ModWeaponItem(Item.ToolMaterial.IRON, "sword_of_tides"));
 
         registerItems();
     }
 
-    public static void registerItems()
+    private static void registerItems()
     {
-        modItems.forEach((name, item) -> {
+        jsonModItems.forEach((name, item) -> {
+            GameRegistry.register(item, new ResourceLocation(MainMod.MODID, name));
+        });
+        objModItems.forEach((name, item) -> {
             GameRegistry.register(item, new ResourceLocation(MainMod.MODID, name));
         });
     }
 
-    public static void registerRenders()
+    public static void registerJsonModels()
     {
-        modItems.forEach((name, item) -> {
-            registerRender(name, item);
+        jsonModItems.forEach((name, item) -> {
+            registerJsonModel(name, item);
         });
     }
 
-    private static void registerRender(String name, Item item)
+    private static void registerJsonModel(String name, Item item)
     {
+        System.out.printf("DEBUG: json model(%s)\n", name);
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().
                 register(item, 0, new ModelResourceLocation(MainMod.MODID + ":" + name, "inventory"));
     }
 
-    private static void registerModel(String name, Item item)
+    public static void registerObjModels()
     {
-        ModelLoader.setCustomModelResourceLocation(
-                item, 0, new ModelResourceLocation(MainMod.MODID + ":" + name, "inventory"));
+        objModItems.forEach((name, item) -> {
+            registerObjModel(name, item);
+        });
     }
 
-    public static void registerModels()
+    private static void registerObjModel(String name, Item item)
     {
+        System.out.printf("DEBUG: obj model(%s)\n", name);
+        ModelLoader.setCustomModelResourceLocation(
+                item, 0, new ModelResourceLocation(MainMod.MODID + ":" + name, "inventory"));
     }
 }
